@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Table</title>
+	<link rel="stylesheet" href="https://fonts.google.com/">
+    <style>
+    table{
+	margin-top: 100px;
+	text-align: center;
+	color: black;
+    width:50%;
+    }
+
+#show th, #show td{
+	padding: 13px;
+}
+
+#btna td input{
+	width: 100%;
+}
+#p
+{
+text-align:center;
+}
+#body
+{
+	font-family: calibri;
+
+}
+#btn{
+	margin: 0 auto;
+	background-color: lightsalmon;
+	width: 40%;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-family: calibri solid;
+	font-size: 100px solid;
+
+}
+/*#label{
+	text-align: right;
+	}*/
+#fname, #lname, #email {
+	padding-left: 10px;
+	padding-right: 10px;
+	width: 50%;
+}
+
+
+
+fieldset{
+	width: 50%;
+	background-color:#b3b3ff;
+
+}
+
+#b1{
+	background-color: #eee;
+}
+table{
+	margin-top: 0;
+}
+
+    </style>
+
+</head>
+<body id="body">
+
+   <form action="/action_page.php">
+   	<center>
+   	<fieldset>
+   		<center><label>Detail Form</label>
+        <hr style="width:40%;text-align:right;margin-left:30%">
+        <label>Name : </label>&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" name="name" id="fname" minlength="3" required="">
+        <br><br>
+        <label>Mob. No. : </label><input type="tel" name="Mob" id="lname"  maxlength="10" required="">
+        <br><br>
+        <label>Email ID : </label>&nbsp&nbsp<input type="email" name="email" id="email" required="">
+        <br><br>
+        <button type="submit" name="button" id="btn" value="SUBMIT" onclick="AddRow()"></button>
+    </center><hr>
+       <center><table  id="show">
+<!--         <thead>
+ -->            <tr>
+                <td><label>Name</label> </td>
+                <td><label>Mob. No.</label></td>
+                <td><label>Email ID</label></td>
+                <td><input type="button" name="delete" value="Delete" id="b1"></td>
+            </tr>
+<!--         </thead>
+ -->    </table></center>
+</fieldset>
+</center>
+   </form>
+	
+	<script>
+		
+		var list1 = [];
+		var list2 = [];
+		var list3 = [];
+
+		var n = 1;
+		var x = 0;
+
+		function AddRow(){
+
+			var AddRown = document.getElementById('show');
+			var NewRow = AddRown.insertRow(n);
+
+			list1[x] = document.getElementById("fname").value;
+			list2[x] = document.getElementById("lname").value;
+			list3[x] = document.getElementById("email").value;
+
+			var cel1 = NewRow.insertCell(0);
+			var cel2 = NewRow.insertCell(1);
+			var cel3 = NewRow.insertCell(2);
+
+			cel1.innerHTML = list1[x];
+			cel2.innerHTML = list2[x];
+			cel3.innerHTML = list3[x];
+
+			n++;
+			x++;
+        }
+
+	</script>
+</body>
+</html>
