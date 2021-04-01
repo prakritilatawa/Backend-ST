@@ -8,3 +8,12 @@
 
 // function nameLength(t){
    
+var v = document.getElementById("fname").value;
+
+function checkName(v) {
+    const regex = /^[a-zA-Z]{3,50}/
+    if (v.match(regex)) 
+        return true;
+    else 
+        return false;
+    }
